@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>首爾 · 七月</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=Noto+Serif+TC:wght@300;400&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+–bg: #f7f5f2;
+–white: #ffffff;
+–ink: #1c1c1c;
+–mid: #6b6b6b;
+–light: #c8c3bb;
+–accent: #3d5a47;
+–accent2: #8b6f5e;
+–tag-bg: #edeae5;
+–card: #ffffff;
+}
+
+body {
+background: var(–bg);
+color: var(–ink);
+font-family: ‘DM Sans’, ‘Noto Sans KR’, sans-serif;
+font-weight: 300;
+min-height: 100vh;
+}
+
+/* ── 상단 헤더 ── */
+.hero {
+background: var(–accent);
+color: #fff;
+padding: 56px 32px 48px;
+position: relative;
+overflow: hidden;
+}
+
+.hero::before {
+content: ‘서울’;
+position: absolute;
+right: -20px;
+top: 50%;
+transform: translateY(-50%);
+font-family: ‘Noto Sans KR’, sans-serif;
+font-size: 140px;
+font-weight: 500;
+color: rgba(255,255,255,0.06);
+letter-spacing: -4px;
+pointer-events: none;
+white-space: nowrap;
+}
+
+.hero-tag {
+display: inline-block;
+background: rgba(255,255,255,0.15);
+border-radius: 100px;
+padding: 4px 14px;
+font-size: 11px;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+margin-bottom: 20px;
+}
+
+.hero-title {
+font-family: ‘Noto Serif TC’, serif;
+font-size: clamp(36px, 8vw, 58px);
+font-weight: 400;
+line-height: 1.1;
+margin-bottom: 8px;
+letter-spacing: -0.01em;
+}
+
+.hero-sub {
+font-size: 13px;
+color: rgba(255,255,255,0.6);
+letter-spacing: 0.08em;
+margin-bottom: 32px;
+}
+
+.hero-pills {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+.pill {
+background: rgba(255,255,255,0.12);
+border: 1px solid rgba(255,255,255,0.2);
+border-radius: 100px;
+padding: 6px 16px;
+font-size: 12px;
+color: rgba(255,255,255,0.85);
+letter-spacing: 0.04em;
+}
+
+/* ── 요약 바 ── */
+.summary-bar {
+background: var(–white);
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+border-bottom: 1px solid var(–tag-bg);
+}
+
+.summary-item {
+padding: 18px 20px;
+border-right: 1px solid var(–tag-bg);
+text-align: center;
+}
+
+.summary-item:last-child { border-right: none; }
+
+.summary-label {
+font-size: 10px;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: var(–light);
+margin-bottom: 4px;
+}
+
+.summary-value {
+font-size: 13px;
+font-weight: 500;
+color: var(–ink);
+letter-spacing: 0.02em;
+}
+
+/* ── 메인 콘텐츠 ── */
+.main {
+padding: 0 16px 80px;
+max-width: 640px;
+margin: 0 auto;
+}
+
+/* ── 데이 섹션 ── */
+.day-section {
+margin-top: 32px;
+}
+
+.day-label-row {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 16px;
+padding: 0 4px;
+}
+
+.day-chip {
+background: var(–accent);
+color: #fff;
+border-radius: 100px;
+padding: 5px 16px;
+font-size: 12px;
+font-weight: 500;
+letter-spacing: 0.06em;
+white-space: nowrap;
+}
+
+.day-chip.brown { background: var(–accent2); }
+
+.day-name {
+font-size: 15px;
+font-weight: 500;
+color: var(–ink);
+}
+
+.day-theme-tag {
+margin-left: auto;
+font-size: 11px;
+color: var(–mid);
+letter-spacing: 0.06em;
+white-space: nowrap;
+}
+
+/* ── 카드 ── */
+.card {
+background: var(–card);
+border-radius: 16px;
+overflow: hidden;
+margin-bottom: 10px;
+border: 1px solid rgba(0,0,0,0.04);
+}
+
+.card-inner {
+padding: 18px 20px;
+}
+
+.event-row {
+display: grid;
+grid-template-columns: 52px 1fr;
+gap: 16px;
+align-items: start;
+padding: 14px 20px;
+border-bottom: 1px solid var(–tag-bg);
+transition: background 0.15s;
+cursor: default;
+}
+
+.event-row:last-child { border-bottom: none; }
+.event-row:hover { background: #fafaf8; }
+
+.event-row.featured {
+background: #f4f7f5;
+}
+.event-row.featured:hover { background: #eef3ef; }
+
+.event-time-col {
+padding-top: 2px;
+}
+
+.etime {
+font-size: 11px;
+font-weight: 500;
+color: var(–accent);
+letter-spacing: 0.06em;
+line-height: 1.4;
+}
+
+.etime.brown { color: var(–accent2); }
+.etime.gray { color: var(–light); }
+
+.event-content {}
+
+.event-name {
+font-size: 14px;
+font-weight: 500;
+color: var(–ink);
+margin-bottom: 4px;
+line-height: 1.4;
+}
+
+.event-kr {
+font-family: ‘Noto Sans KR’, sans-serif;
+font-size: 11px;
+color: var(–light);
+margin-bottom: 6px;
+letter-spacing: 0.02em;
+}
+
+.event-desc {
+font-size: 12.5px;
+color: var(–mid);
+line-height: 1.7;
+}
+
+.event-desc em {
+font-style: normal;
+color: var(–accent);
+}
+
+.event-desc em.brown {
+color: var(–accent2);
+}
+
+/* 태그 */
+.tag-row {
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+margin-top: 8px;
+}
+
+.tag {
+background: var(–tag-bg);
+border-radius: 100px;
+padding: 3px 10px;
+font-size: 11px;
+color: var(–mid);
+letter-spacing: 0.04em;
+}
+
+.tag.green {
+background: #e8efe9;
+color: var(–accent);
+}
+
+.tag.brown {
+background: #f0e9e5;
+color: var(–accent2);
+}
+
+/* ── 교통 카드 ── */
+.transport-row {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 12px 20px;
+background: var(–tag-bg);
+border-radius: 12px;
+margin-bottom: 10px;
+}
+
+.transport-icon {
+font-size: 16px;
+flex-shrink: 0;
+}
+
+.transport-text {
+font-size: 12.5px;
+color: var(–mid);
+line-height: 1.5;
+}
+
+.transport-text strong {
+color: var(–ink);
+font-weight: 500;
+}
+
+/* ── 플라이트 카드 ── */
+.flight-card {
+background: var(–card);
+border-radius: 16px;
+padding: 20px;
+border: 1px solid rgba(0,0,0,0.04);
+margin-bottom: 10px;
+}
+
+.flight-header {
+font-size: 10px;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: var(–light);
+margin-bottom: 12px;
+}
+
+.flight-main {
+display: flex;
+align-items: center;
+gap: 0;
+margin-bottom: 10px;
+}
+
+.flight-time {
+font-size: 28px;
+font-weight: 300;
+letter-spacing: -0.02em;
+line-height: 1;
+}
+
+.flight-arrow {
+flex: 1;
+text-align: center;
+position: relative;
+}
+
+.flight-arrow::before {
+content: ‘’;
+position: absolute;
+left: 10px;
+right: 10px;
+top: 50%;
+height: 1px;
+background: var(–light);
+}
+
+.flight-arrow span {
+background: var(–white);
+position: relative;
+padding: 0 4px;
+font-size: 11px;
+color: var(–light);
+}
+
+.flight-airport {
+font-size: 11px;
+color: var(–mid);
+margin-top: 4px;
+letter-spacing: 0.04em;
+}
+
+.flight-info-row {
+display: flex;
+gap: 8px;
+flex-wrap: wrap;
+}
+
+/* ── 노트 섹션 ── */
+.notes-section {
+margin-top: 32px;
+background: var(–card);
+border-radius: 16px;
+overflow: hidden;
+border: 1px solid rgba(0,0,0,0.04);
+}
+
+.notes-header {
+background: var(–accent2);
+color: #fff;
+padding: 14px 20px;
+font-size: 12px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+}
+
+.note-item {
+display: flex;
+gap: 12px;
+align-items: start;
+padding: 12px 20px;
+border-bottom: 1px solid var(–tag-bg);
+font-size: 12.5px;
+color: var(–mid);
+line-height: 1.7;
+}
+
+.note-item:last-child { border-bottom: none; }
+
+.note-dot {
+width: 5px;
+height: 5px;
+border-radius: 50%;
+background: var(–light);
+flex-shrink: 0;
+margin-top: 8px;
+}
+
+/* ── 푸터 ── */
+.footer {
+margin-top: 48px;
+text-align: center;
+padding: 0 20px;
+}
+
+.footer-text {
+font-family: ‘Noto Sans KR’, sans-serif;
+font-size: 18px;
+color: var(–light);
+letter-spacing: 0.06em;
+margin-bottom: 4px;
+}
+
+.footer-sub {
+font-size: 11px;
+color: var(–light);
+letter-spacing: 0.12em;
+}
+
+/* 애니메이션 */
+@keyframes up {
+from { opacity: 0; transform: translateY(16px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.day-section {
+animation: up 0.5s ease both;
+}
+.day-section:nth-child(1) { animation-delay: 0.05s; }
+.day-section:nth-child(2) { animation-delay: 0.12s; }
+.day-section:nth-child(3) { animation-delay: 0.19s; }
+.day-section:nth-child(4) { animation-delay: 0.26s; }
+.day-section:nth-child(5) { animation-delay: 0.33s; }
+
+@media (max-width: 400px) {
+.hero { padding: 44px 20px 36px; }
+.day-theme-tag { display: none; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-tag">Field Notes · 田野行程</div>
+  <div class="hero-title">首爾，七月</div>
+  <div class="hero-sub">2026.07.10 — 07.13 · 鐘路區</div>
+  <div class="hero-pills">
+    <div class="pill">韓亞航空 直飛</div>
+    <div class="pill">Hanok Hotel Daam</div>
+    <div class="pill">地景讀民情</div>
+    <div class="pill">威權現代主義</div>
+  </div>
+</div>
+
+<!-- SUMMARY BAR -->
+
+<div class="summary-bar">
+  <div class="summary-item">
+    <div class="summary-label">航班</div>
+    <div class="summary-value">OZ714 / OZ713</div>
+  </div>
+  <div class="summary-item">
+    <div class="summary-label">住宿</div>
+    <div class="summary-value">3晚</div>
+  </div>
+  <div class="summary-item">
+    <div class="summary-label">季節</div>
+    <div class="summary-value">梅雨尾端</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+  <!-- D1 -->
+
+  <div class="day-section">
+    <div class="day-label-row">
+      <div class="day-chip">D1 · 07.10 週五</div>
+      <div class="day-name">出發日</div>
+      <div class="day-theme-tag">雲林 → 首爾</div>
+    </div>
+
+```
+<!-- 去程航班 -->
+<div class="flight-card">
+  <div class="flight-header">去程航班 · 韓亞航空 OZ714</div>
+  <div class="flight-main">
+    <div>
+      <div class="flight-time">16:55</div>
+      <div class="flight-airport">TPE · 桃園 T2</div>
+    </div>
+    <div class="flight-arrow"><span>2h30m</span></div>
+    <div style="text-align:right">
+      <div class="flight-time">20:25</div>
+      <div class="flight-airport">ICN · 仁川 T2</div>
+    </div>
+  </div>
+  <div class="flight-info-row">
+    <div class="tag green">直飛</div>
+    <div class="tag">雲林高鐵 13:12 出發</div>
+    <div class="tag">桃園站 14:18 抵達</div>
+  </div>
+</div>
+
+<div class="transport-row">
+  <div class="transport-icon">🚇</div>
+  <div class="transport-text"><strong>機場快線 AREX</strong> 直達列車 → 首爾站 → 地鐵至鐘路區，約1小時</div>
+</div>
+
+<div class="card">
+  <div class="event-row featured">
+    <div class="event-time-col"><div class="etime">22:00</div></div>
+    <div class="event-content">
+      <div class="event-name">入住 Hanok Hotel Daam</div>
+      <div class="event-desc">鐘路區，北村韓屋村旁。<em>含早餐，3晚。</em></div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time-col"><div class="etime gray">入住後</div></div>
+    <div class="event-content">
+      <div class="event-name">益善洞韓屋村夜間散步</div>
+      <div class="event-kr">익선동 한옥마을</div>
+      <div class="event-desc">步行3分鐘即達。白天是觀光客的，夜晚氣場還給在地人。感受第一層城市溫度。</div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- D2 -->
+
+  <div class="day-section">
+    <div class="day-label-row">
+      <div class="day-chip">D2 · 07.11 週六</div>
+      <div class="day-name">城西軸線日</div>
+      <div class="day-theme-tag">列強 · 殖民 · 威權</div>
+    </div>
+
+```
+<div class="transport-row">
+  <div class="transport-icon">🚇</div>
+  <div class="transport-text"><strong>安國站 → 景福宮站</strong>（3號線，2站）→ 步行至貞洞街，約20分鐘</div>
+</div>
+
+<div class="card">
+  <div class="event-row featured">
+    <div class="event-time-col"><div class="etime">10:00</div></div>
+    <div class="event-content">
+      <div class="event-name">貞洞街</div>
+      <div class="event-kr">정동길</div>
+      <div class="event-desc">朝鮮末期列強使館聚集地——俄、美、英使館舊址沿街並列。<em>主權被瓜分的物理現場，每棟建築背後都是一次外交讓步。</em></div>
+      <div class="tag-row"><div class="tag green">步行30-40分</div></div>
+    </div>
+  </div>
+  <div class="event-row featured">
+    <div class="event-time-col"><div class="etime">11:00</div></div>
+    <div class="event-content">
+      <div class="event-name">德壽宮石牆路</div>
+      <div class="event-kr">덕수궁 돌담길</div>
+      <div class="event-desc">石牆一側朝鮮王朝，另一側日治西洋建築。<em>首爾最清晰感受時代壓迫感的一條路。</em></div>
+      <div class="tag-row"><div class="tag green">步行20分</div></div>
+    </div>
+  </div>
+  <div class="event-row featured">
+    <div class="event-time-col"><div class="etime">11:30</div></div>
+    <div class="event-content">
+      <div class="event-name">國立現代美術館德壽宮館</div>
+      <div class="event-kr">국립현대미술관 덕수궁관</div>
+      <div class="event-desc">日治建築外殼內展示韓國近現代美術。<em>空間本身就是文本。</em>週六開放至21:00。</div>
+      <div class="tag-row"><div class="tag green">停留1-1.5小時</div></div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time-col"><div class="etime brown">13:00</div></div>
+    <div class="event-content">
+      <div class="event-name">午餐</div>
+      <div class="event-desc">德壽宮館附近隨機選韓式定食或湯飯。<em class="brown">告知不要內臟部位。</em></div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time-col"><div class="etime">14:00</div></div>
+    <div class="event-content">
+      <div class="event-name">世宗文化會館</div>
+      <div class="event-kr">세종문화회관</div>
+      <div class="event-desc">1978年朴正熙時期建成。威權現代主義的典型語法——柱列尺度製造壓迫性國家感。<em>不需入內，站廣場看立面即可。</em></div>
+      <div class="tag-row"><div class="tag">約10分鐘</div></div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time-col"><div class="etime">14:30</div></div>
+    <div class="event-content">
+      <div class="event-name">舊首爾市廳舍（首爾市立圖書館）</div>
+      <div class="event-kr">서울도서관</div>
+      <div class="event-desc">1926年日治建造，後成威權時代權力中心。新舊市廳舍並置——<em>殖民、威權、財閥現代性三層同時在場，首爾地景最濃縮的一個鏡頭。</em>可入內參觀。</div>
+      <div class="tag-row"><div class="tag">停留30分</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="transport-row">
+  <div class="transport-icon">🚇</div>
+  <div class="transport-text"><strong>2號線 → 弘大入口站</strong> 步行10分鐘至延南洞，約30分鐘</div>
+</div>
+
+<div class="card">
+  <div class="event-row">
+    <div class="event-time-col"><div class="etime">16:00</div></div>
+    <div class="event-content">
+      <div class="event-name">延南洞</div>
+      <div class="event-kr">연남동</div>
+      <div class="event-desc">首爾文青濃度最高的街區。獨立書店、設計選物、咖啡廳密集。不用地圖，隨意走進感興趣的店。</div>
+      <div class="tag-row"><div class="tag">停留1.5-2小時</div></div>
+    </div>
+  </div>
+  <div class="event-row featured">
+    <div class="event-time-col"><div class="etime brown">18:00</div></div>
+    <div class="event-content">
+      <div class="event-name">晚餐 · 乙密台平壤冷麵</div>
+      <div class="event-kr">을밀대 · 평양냉면</div>
+      <div class="event-desc">延南洞步行可達。蕎麥麵體有嚼勁、湯底清冽。<em>在首爾吃平壤的食物，分裂的地緣感會很具體。</em>單點冷麵，告知不要牛雜。</div>
+      <div class="tag-row"><div class="tag brown">餐廳</div><div class="tag">不要內臟</div></div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- D3 -->
+
+  <div class="day-section">
+    <div class="day-label-row">
+      <div class="day-chip brown">D3 · 07.12 週日</div>
+      <div class="day-name">跨江＋購物日</div>
+      <div class="day-theme-tag">聖水 · 仁寺 · 益善</div>
+    </div>
+
+```
+<div class="transport-row">
+  <div class="transport-icon">🚇</div>
+  <div class="transport-text"><strong>安國站 → 聖水站</strong>（2號線）約40分鐘，跨越漢江</div>
+</div>
+
+<div class="card">
+  <div class="event-row featured">
+    <div class="event-time-col"><div class="etime">10:00</div></div>
+    <div class="event-content">
+      <div class="event-name">聖水洞</div>
+      <div class="event-kr">성수동</div>
+      <div class="event-desc">前工業廠房改造的設計街區。品牌快閃店、設計選物、獨立咖啡廳密集。<em>工業感與精品感並置，空間感比延南洞更開闊。</em></div>
+      <div class="tag-row"><div class="tag green">停留約3小時</div></div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time-col"><div class="etime brown">12:30</div></div>
+    <div class="event-content">
+      <div class="event-name">午餐 · 聖水洞內</div>
+      <div class="event-desc">選一間舒服的餐廳，韓式定食或燉肉均可。<em class="brown">告知不要內臟部位。</em></div>
+    </div>
+  </div>
+</div>
+
+<div class="transport-row">
+  <div class="transport-icon">🚇</div>
+  <div class="transport-text"><strong>聖水站 → 安國站</strong> 返回鐘路區，約40分鐘</div>
+</div>
+
+<div class="card">
+  <div class="event-row">
+    <div class="event-time-col"><div class="etime">14:30</div></div>
+    <div class="event-content">
+      <div class="event-name">仁寺洞</div>
+      <div class="event-kr">인사동</div>
+      <div class="event-desc">飯店步行約10分鐘。傳統工藝與現代設計混合街區。Ssamziegil商場中庭式設計，獨立品牌與手工藝品為主。周邊畫廊可隨意進出。</div>
+      <div class="tag-row"><div class="tag">停留1-1.5小時</div></div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time-col"><div class="etime">16:00</div></div>
+    <div class="event-content">
+      <div class="event-name">益善洞 ＋ 鐘路三街 Olive Young</div>
+      <div class="event-kr">익선동 · 종로3가</div>
+      <div class="event-desc">仁寺洞步行5分鐘。益善洞白天氣場與D1夜晚截然不同。<em>Olive Young</em>在鐘路三街掃貨——韓系藥妝、保養品、零食。</div>
+      <div class="tag-row"><div class="tag">停留約1小時</div></div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time-col"><div class="etime gray">17:30</div></div>
+    <div class="event-content">
+      <div class="event-name">北村韓屋村傍晚散步</div>
+      <div class="event-kr">북촌한옥마을</div>
+      <div class="event-desc">步行回飯店方向，順路穿越北村。傍晚觀光客退去，韓屋巷弄安靜。<em>整趟行程節奏最慢的一段。</em></div>
+    </div>
+  </div>
+  <div class="event-row featured">
+    <div class="event-time-col"><div class="etime brown">19:00</div></div>
+    <div class="event-content">
+      <div class="event-name">晚餐 · 鐘路區燒肉</div>
+      <div class="event-kr">삼겹살 / 목살</div>
+      <div class="event-desc">北村周邊隨機選一間。指定<em>五花肉（삼겹살）</em>或<em>牛肩肉（목살）</em>，告知不要內臟。</div>
+      <div class="tag-row"><div class="tag brown">餐廳</div><div class="tag">삼겹살 / 목살</div></div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- D4 -->
+
+  <div class="day-section">
+    <div class="day-label-row">
+      <div class="day-chip">D4 · 07.13 週一</div>
+      <div class="day-name">收尾日</div>
+      <div class="day-theme-tag">昌德宮 → 返台</div>
+    </div>
+
+```
+<div class="card">
+  <div class="event-row featured">
+    <div class="event-time-col"><div class="etime">09:00</div></div>
+    <div class="event-content">
+      <div class="event-name">昌德宮後苑（祕苑）</div>
+      <div class="event-kr">창덕궁 비원</div>
+      <div class="event-desc">飯店步行5分鐘即達。後苑有<em>定時導覽制，現場排早場。</em>朝鮮王朝地景保存最完整之處——不壯觀，但幽靜。78英畝林苑與池塘，與整趟行程高密度形成對比。</div>
+      <div class="tag-row"><div class="tag green">停留約1.5小時</div><div class="tag">需另購後苑票</div></div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time-col"><div class="etime gray">10:30</div></div>
+    <div class="event-content">
+      <div class="event-name">退房</div>
+      <div class="event-desc">行李寄存或直接帶走</div>
+    </div>
+  </div>
+</div>
+
+<div class="transport-row">
+  <div class="transport-icon">🚇</div>
+  <div class="transport-text"><strong>地鐵 → 首爾站 → AREX直達列車</strong> → 仁川機場 T2，約43分鐘</div>
+</div>
+
+<!-- 回程航班 -->
+<div class="flight-card">
+  <div class="flight-header">回程航班 · 韓亞航空 OZ713</div>
+  <div class="flight-main">
+    <div>
+      <div class="flight-time">13:55</div>
+      <div class="flight-airport">ICN · 仁川 T2</div>
+    </div>
+    <div class="flight-arrow"><span>2h35m</span></div>
+    <div style="text-align:right">
+      <div class="flight-time">15:30</div>
+      <div class="flight-airport">TPE · 桃園 T2</div>
+    </div>
+  </div>
+  <div class="flight-info-row">
+    <div class="tag green">直飛</div>
+    <div class="tag">12:00前抵達機場</div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- 행전 주의사항 -->
+
+  <div class="notes-section">
+    <div class="notes-header">行前提醒</div>
+    <div class="note-item"><div class="note-dot"></div><div>昌德宮後苑定時導覽制，建議現場提早排隊，或官網預約</div></div>
+    <div class="note-item"><div class="note-dot"></div><div>點餐統一說：삼겹살（三層肉）或 목살（頸肉），不要 내장（內臟），不要 날것（生食）</div></div>
+    <div class="note-item"><div class="note-dot"></div><div>Olive Young遍布鐘路三街，無需特別規劃，路過隨時進</div></div>
+    <div class="note-item"><div class="note-dot"></div><div>7月梅雨季尾端，濕熱偶有午後陣雨，隨身備輕便雨具</div></div>
+    <div class="note-item"><div class="note-dot"></div><div>交通建議使用 T-money 交通卡，機場抵達後即可購買</div></div>
+    <div class="note-item"><div class="note-dot"></div><div>飯店含早餐，每日無需另行安排早餐</div></div>
+  </div>
+
+  <!-- 푸터 -->
+
+  <div class="footer">
+    <div class="footer-text">서울 · 2026</div>
+    <div class="footer-sub">SEOUL FIELD NOTES · 07.10—07.13</div>
+  </div>
+
+</div>
+</body>
+</html>
