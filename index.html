@@ -63,7 +63,7 @@ font-family: -apple-system, ‘Apple SD Gothic Neo’, sans-serif;
 }
 .hero-badge {
 font-size: clamp(11px, 1.1vw, 14px);
-color: #9dbfa8;
+color: #c8dfd0;
 letter-spacing: 0.3em;
 text-transform: uppercase;
 margin-bottom: 2rem;
@@ -73,17 +73,17 @@ animation: fadeUp 0.8s 0.2s forwards;
 .hero-title {
 font-size: clamp(48px, 8vw, 120px);
 font-weight: 900;
-color: var(–paper);
+color: #ffffff;
 line-height: 0.95;
 letter-spacing: -0.03em;
 margin-bottom: 1.5rem;
 opacity: 0;
 animation: fadeUp 0.8s 0.4s forwards;
 }
-.hero-title span { color: #9dbfa8; }
+.hero-title span { color: #c8dfd0; }
 .hero-sub {
 font-size: clamp(13px, 1.3vw, 16px);
-color: rgba(255,255,255,0.45);
+color: rgba(255,255,255,0.7);
 font-weight: 300;
 letter-spacing: 0.05em;
 opacity: 0;
@@ -107,19 +107,19 @@ background: rgba(157,191,168,0.06);
 .flight-label {
 font-size: 10px;
 letter-spacing: 0.3em;
-color: #9dbfa8;
+color: #c8dfd0;
 text-transform: uppercase;
 margin-bottom: 0.4rem;
 }
 .flight-info {
 font-size: clamp(14px, 1.4vw, 18px);
-color: var(–paper);
+color: #ffffff;
 font-weight: 600;
 letter-spacing: 0.05em;
 }
 .flight-time {
 font-size: 12px;
-color: rgba(255,255,255,0.35);
+color: rgba(255,255,255,0.6);
 margin-top: 0.2rem;
 font-weight: 300;
 }
@@ -130,7 +130,7 @@ left: 10vw;
 display: flex;
 align-items: center;
 gap: 1rem;
-color: rgba(255,255,255,0.25);
+color: rgba(255,255,255,0.5);
 font-size: 11px;
 letter-spacing: 0.3em;
 text-transform: uppercase;
@@ -141,7 +141,7 @@ animation: fadeUp 0.8s 1.2s forwards;
 content: ‘’;
 width: 40px;
 height: 1px;
-background: rgba(255,255,255,0.25);
+background: rgba(255,255,255,0.5);
 animation: lineGrow 1s 1.5s forwards;
 transform-origin: left;
 transform: scaleX(0);
@@ -802,9 +802,9 @@ footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
         <div class="timeline-item">
           <div class="tl-time brown">17:00</div>
           <div class="tl-body">
-            <div class="tl-place">下山 → 明洞晚餐</div>
+            <div class="tl-place">下山 → 返回鐘路區</div>
             <div class="tl-kr">명동</div>
-            <div class="tl-note">纜車下山後步行至明洞。街邊韓式料理選擇多，隨機選一間。<em class="brown">告知不要內臟部位。</em></div>
+            <div class="tl-note">纜車下山後步行至明洞站，搭地鐵返回。</div>
           </div>
         </div>
         <div class="timeline-item">
@@ -822,11 +822,19 @@ footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time">20:00</div>
+          <div class="tl-time brown">20:00</div>
           <div class="tl-body">
-            <div class="tl-place">益善洞 ＋ 鐘路三街 Olive Young</div>
-            <div class="tl-kr">익선동 · 종로3가</div>
-            <div class="tl-note">仁寺洞步行5分鐘。<em>Olive Young</em>通常開至22:00，藥妝、保養品、零食按需採購。停留約1小時。</div>
+            <div class="tl-place">晚餐 · 益善洞</div>
+            <div class="tl-kr">익선동</div>
+            <div class="tl-note">仁寺洞步行5分鐘。益善洞韓屋改造餐廳密集，隨機選一間。<em class="brown">告知不要內臟部位。</em></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">21:00</div>
+          <div class="tl-body">
+            <div class="tl-place">鐘路三街 Olive Young</div>
+            <div class="tl-kr">종로3가</div>
+            <div class="tl-note">益善洞步行5分鐘。<em>Olive Young</em>通常開至22:00，藥妝、保養品、零食按需採購。</div>
           </div>
         </div>
         <div class="timeline-item">
@@ -903,25 +911,6 @@ footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
   </div>
 
 </section>
-
-<!-- NOTES -->
-
-<section class="notes-section">
-  <div class="notes-title">行前提醒 Before You Go</div>
-  <div class="notes-grid">
-    <div class="note-item"><div class="note-dot"></div><div>昌德宮後苑定時導覽制，建議現場提早排隊或官網預約</div></div>
-    <div class="note-item"><div class="note-dot"></div><div>點餐統一說：삼겹살（三層肉）或 목살（頸肉），不要 내장（內臟），不要 날것（生食）</div></div>
-    <div class="note-item"><div class="note-dot"></div><div>Olive Young遍布鐘路三街，無需特別規劃，路過隨時進</div></div>
-    <div class="note-item"><div class="note-dot"></div><div>7月梅雨季尾端，濕熱偶有午後陣雨，隨身備輕便雨具</div></div>
-    <div class="note-item"><div class="note-dot"></div><div>交通建議使用 T-money 交通卡，機場抵達後即可購買</div></div>
-    <div class="note-item"><div class="note-dot"></div><div>飯店含早餐，每日無需另行安排早餐</div></div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-text">地景讀民情 · 서울 2026</div>
-  <div class="footer-dates">7.10 — 7.13</div>
-</footer>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
