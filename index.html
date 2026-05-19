@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -35,469 +34,482 @@
     opacity: 0.4;
   }
 
-/* ── HERO ── */
-.hero {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 8vw 10vw;
-position: relative;
-overflow: hidden;
-background-color: #1a2a20;
-}
-.hero::after {
-content: ‘서울’;
-position: absolute;
-right: -2vw;
-top: 50%;
-transform: translateY(-50%);
-font-size: clamp(200px, 30vw, 420px);
-font-weight: 900;
-color: rgba(255,255,255,0.03);
-letter-spacing: -0.05em;
-line-height: 1;
-pointer-events: none;
-font-family: -apple-system, ‘Apple SD Gothic Neo’, sans-serif;
-}
-.hero-badge {
-font-size: clamp(11px, 1.1vw, 14px);
-color: #a8893c;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-margin-bottom: 2rem;
-opacity: 0;
-animation: fadeUp 0.8s 0.2s forwards;
-}
-.hero-title {
-font-size: clamp(48px, 8vw, 120px);
-font-weight: 900;
-color: #ffffff;
-line-height: 0.95;
-letter-spacing: -0.03em;
-margin-bottom: 1.5rem;
-opacity: 0;
-animation: fadeUp 0.8s 0.4s forwards;
-}
-.hero-title span { color: #a8893c; }
-.hero-sub {
-font-size: clamp(13px, 1.3vw, 16px);
-color: rgba(255,255,255,0.7);
-font-weight: 300;
-letter-spacing: 0.05em;
-opacity: 0;
-animation: fadeUp 0.8s 0.6s forwards;
-max-width: 480px;
-line-height: 1.8;
-}
-.hero-flights {
-margin-top: 3rem;
-display: flex;
-gap: 2rem;
-flex-wrap: wrap;
-opacity: 0;
-animation: fadeUp 0.8s 0.8s forwards;
-}
-.flight-card {
-border: 1px solid rgba(157,191,168,0.25);
-padding: 1rem 1.5rem;
-background: rgba(157,191,168,0.06);
-}
-.flight-label {
-font-size: 10px;
-letter-spacing: 0.3em;
-color: #a8893c;
-text-transform: uppercase;
-margin-bottom: 0.4rem;
-}
-.flight-info {
-font-size: clamp(14px, 1.4vw, 18px);
-color: #ffffff;
-font-weight: 600;
-letter-spacing: 0.05em;
-}
-.flight-time {
-font-size: 12px;
-color: rgba(255,255,255,0.6);
-margin-top: 0.2rem;
-font-weight: 300;
-}
-.scroll-hint {
-position: absolute;
-bottom: 3rem;
-left: 10vw;
-display: flex;
-align-items: center;
-gap: 1rem;
-color: rgba(255,255,255,0.5);
-font-size: 11px;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-opacity: 0;
-animation: fadeUp 0.8s 1.2s forwards;
-}
-.scroll-hint::before {
-content: ‘’;
-width: 40px;
-height: 1px;
-background: rgba(255,255,255,0.5);
-animation: lineGrow 1s 1.5s forwards;
-transform-origin: left;
-transform: scaleX(0);
-}
-@keyframes lineGrow { to { transform: scaleX(1); } }
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8vw 10vw;
+    position: relative;
+    overflow: hidden;
+    background-color: #1a2a20;
+  }
+  .hero::after {
+    content: '서울';
+    position: absolute;
+    right: -2vw;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: clamp(200px, 30vw, 420px);
+    font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    letter-spacing: -0.05em;
+    line-height: 1;
+    pointer-events: none;
+    font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  }
+  .hero-badge {
+    font-size: clamp(11px, 1.1vw, 14px);
+    color: #a8893c;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-title {
+    font-size: clamp(48px, 8vw, 120px);
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+  .hero-title span { color: #a8893c; }
+  .hero-sub {
+    font-size: clamp(13px, 1.3vw, 16px);
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+    max-width: 480px;
+    line-height: 1.8;
+  }
+  .hero-flights {
+    margin-top: 3rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+  .flight-card {
+    border: 1px solid rgba(157,191,168,0.25);
+    padding: 1rem 1.5rem;
+    background: rgba(157,191,168,0.06);
+  }
+  .flight-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: #a8893c;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .flight-info {
+    font-size: clamp(14px, 1.4vw, 18px);
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .flight-time {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 0.2rem;
+    font-weight: 300;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 3rem;
+    left: 10vw;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.2s forwards;
+  }
+  .scroll-hint::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: rgba(255,255,255,0.5);
+    animation: lineGrow 1s 1.5s forwards;
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  @keyframes lineGrow { to { transform: scaleX(1); } }
 
-/* ── BOOKING ── */
-.booking-section {
-background: #1a2a20;
-padding: 2rem 10vw;
-border-bottom: 1px solid rgba(157,191,168,0.1);
-}
-.booking-title {
-font-size: 10px;
-letter-spacing: 0.35em;
-color: #a8893c;
-text-transform: uppercase;
-margin-bottom: 1rem;
-}
-.booking-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 1.5rem;
-}
-.booking-item { display: flex; flex-direction: column; gap: 0.2rem; }
-.booking-label {
-font-size: 10px;
-letter-spacing: 0.25em;
-color: rgba(200,223,208,0.6);
-text-transform: uppercase;
-margin-bottom: 0.3rem;
-}
-.booking-name { font-size: 12px; font-weight: 600; color: #ffffff; }
-.booking-detail { font-size: 11px; color: rgba(255,255,255,0.65); font-weight: 300; }
-.booking-confirmed { font-size: 10px; color: #a8893c; letter-spacing: 0.05em; margin-top: 0.4rem; }
+  /* ── BOOKING ── */
+  .booking-section {
+    background: #1a2a20;
+    padding: 2rem 10vw;
+    border-bottom: 1px solid rgba(157,191,168,0.1);
+  }
+  .booking-title {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    color: #a8893c;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .booking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .booking-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .booking-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: rgba(200,223,208,0.6);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .booking-name { font-size: 12px; font-weight: 600; color: #ffffff; }
+  .booking-detail { font-size: 11px; color: rgba(255,255,255,0.65); font-weight: 300; }
+  .booking-confirmed { font-size: 10px; color: #a8893c; letter-spacing: 0.05em; margin-top: 0.4rem; }
 
-/* ── THEME STRIP ── */
-.theme-strip {
-background: #e8e4db;
-padding: 2.5rem 10vw;
-display: flex;
-gap: 0;
-overflow-x: auto;
-border-bottom: 1px solid rgba(61,90,71,0.1);
-}
-.theme-item {
-flex: 1;
-min-width: 140px;
-padding: 0 2rem 0 0;
-border-right: 1px solid rgba(61,90,71,0.12);
-margin-right: 2rem;
-}
-.theme-item:last-child { border-right: none; margin-right: 0; }
-.theme-day {
-font-size: 10px;
-letter-spacing: 0.3em;
-color: #7a5e1a;
-text-transform: uppercase;
-margin-bottom: 0.3rem;
-}
-.theme-title {
-font-size: 15px;
-font-weight: 700;
-color: #0f1a14;
-margin-bottom: 0.2rem;
-}
-.theme-sub {
-font-size: 11px;
-color: #7a8a80;
-font-style: italic;
-line-height: 1.5;
-}
+  /* ── THEME STRIP ── */
+  .theme-strip {
+    background: #e8e4db;
+    padding: 2.5rem 10vw;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    border-bottom: 1px solid rgba(61,90,71,0.1);
+  }
+  .theme-item {
+    flex: 1;
+    min-width: 140px;
+    padding: 0 2rem 0 0;
+    border-right: 1px solid rgba(61,90,71,0.12);
+    margin-right: 2rem;
+  }
+  .theme-item:last-child { border-right: none; margin-right: 0; }
+  .theme-day {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: #7a5e1a;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .theme-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f1a14;
+    margin-bottom: 0.2rem;
+  }
+  .theme-sub {
+    font-size: 11px;
+    color: #7a8a80;
+    font-style: italic;
+    line-height: 1.5;
+  }
 
-/* ── DAYS ── */
-.days-container {
-padding: 6vw 10vw;
-background: #f4f1eb;
-}
-.section-label {
-font-size: 11px;
-letter-spacing: 0.4em;
-color: #7a5e1a;
-text-transform: uppercase;
-margin-bottom: 4rem;
-display: flex;
-align-items: center;
-gap: 1.5rem;
-}
-.section-label::after {
-content: ‘’;
-flex: 1;
-height: 1px;
-background: linear-gradient(to right, #7a5e1a, transparent);
-opacity: 0.4;
-}
+  /* ── DAYS ── */
+  .days-container {
+    padding: 6vw 10vw;
+    background: #f4f1eb;
+  }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: #7a5e1a;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #7a5e1a, transparent);
+    opacity: 0.4;
+  }
 
-/* ── DAY CARD ── */
-.day-card {
-display: grid;
-grid-template-columns: 80px 1fr;
-position: relative;
-opacity: 0;
-transform: translateY(20px);
-transition: opacity 0.6s, transform 0.6s;
-}
-.day-card.visible { opacity: 1; transform: translateY(0); }
-.day-card:not(:last-child)::after {
-content: ‘’;
-position: absolute;
-left: 39px;
-top: 72px;
-bottom: -1px;
-width: 1px;
-background: linear-gradient(to bottom, #7a5e1a, #e8e4db);
-opacity: 0.3;
-}
-.day-number {
-display: flex;
-flex-direction: column;
-align-items: center;
-padding-top: 1.5rem;
-position: relative;
-z-index: 1;
-}
-.day-dot {
-width: 10px;
-height: 10px;
-background: #7a5e1a;
-border-radius: 50%;
-margin-bottom: 0.5rem;
-box-shadow: 0 0 0 4px #f4f1eb, 0 0 0 5px rgba(184,146,42,0.3);
-}
-.day-dot.brown {
-background: #6b4e3d;
-box-shadow: 0 0 0 4px #f4f1eb, 0 0 0 5px rgba(139,111,94,0.25);
-}
-.day-num-text {
-font-size: 10px;
-letter-spacing: 0.2em;
-color: #7a8a80;
-writing-mode: vertical-rl;
-text-orientation: mixed;
-transform: rotate(180deg);
-margin-top: 0.5rem;
-}
-.day-content { padding: 1.5rem 0 3rem 2rem; }
-.day-header { margin-bottom: 1.5rem; }
-.day-date {
-font-size: 11px;
-letter-spacing: 0.3em;
-color: #7a5e1a;
-text-transform: uppercase;
-margin-bottom: 0.4rem;
-}
-.day-date.brown { color: #6b4e3d; }
-.day-title {
-font-size: clamp(22px, 3vw, 36px);
-font-weight: 900;
-color: #0f1a14;
-line-height: 1.1;
-letter-spacing: -0.02em;
-}
-.day-subtitle {
-font-size: 13px;
-color: #7a8a80;
-margin-top: 0.3rem;
-font-style: italic;
-}
-.day-theme-tag {
-display: inline-block;
-font-size: 10px;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-padding: 3px 10px;
-border: 1px solid rgba(184,146,42,0.4);
-color: #7a5e1a;
-margin-top: 0.5rem;
-}
-.day-theme-tag.brown {
-border-color: rgba(139,111,94,0.3);
-color: #6b4e3d;
-}
+  /* ── DAY CARD ── */
+  .day-card {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  .day-card.visible { opacity: 1; transform: translateY(0); }
+  .day-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 39px;
+    top: 72px;
+    bottom: -1px;
+    width: 1px;
+    background: linear-gradient(to bottom, #7a5e1a, #e8e4db);
+    opacity: 0.3;
+  }
+  .day-number {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .day-dot {
+    width: 10px;
+    height: 10px;
+    background: #7a5e1a;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 0 4px #f4f1eb, 0 0 0 5px rgba(184,146,42,0.3);
+  }
+  .day-dot.brown {
+    background: #6b4e3d;
+    box-shadow: 0 0 0 4px #f4f1eb, 0 0 0 5px rgba(139,111,94,0.25);
+  }
+  .day-num-text {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: #7a8a80;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    margin-top: 0.5rem;
+  }
+  .day-content { padding: 1.5rem 0 3rem 2rem; }
+  .day-header { margin-bottom: 1.5rem; }
+  .day-date {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: #7a5e1a;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .day-date.brown { color: #6b4e3d; }
+  .day-title {
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 900;
+    color: #0f1a14;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .day-subtitle {
+    font-size: 13px;
+    color: #7a8a80;
+    margin-top: 0.3rem;
+    font-style: italic;
+  }
+  .day-theme-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border: 1px solid rgba(184,146,42,0.4);
+    color: #7a5e1a;
+    margin-top: 0.5rem;
+  }
+  .day-theme-tag.brown {
+    border-color: rgba(139,111,94,0.3);
+    color: #6b4e3d;
+  }
 
-/* ── TIMELINE ── */
-.timeline { display: flex; flex-direction: column; }
-.timeline-item {
-display: grid;
-grid-template-columns: 70px 1fr;
-gap: 1rem;
-padding: 0.7rem 0;
-border-bottom: 1px solid rgba(61,90,71,0.08);
-transition: background 0.2s, padding 0.2s;
-}
-.timeline-item:hover {
-background: rgba(61,90,71,0.04);
-margin: 0 -1rem;
-padding-left: 1rem;
-padding-right: 1rem;
-}
-.timeline-item:last-child { border-bottom: none; }
-.tl-time {
-font-size: 12px;
-color: #7a5e1a;
-letter-spacing: 0.05em;
-padding-top: 0.15rem;
-white-space: nowrap;
-font-weight: 500;
-}
-.tl-time.brown { color: #6b4e3d; }
-.tl-time.gray { color: rgba(61,90,71,0.3); }
-.tl-place {
-font-size: 14px;
-font-weight: 600;
-color: #0f1a14;
-margin-bottom: 0.2rem;
-line-height: 1.4;
-}
-.tl-kr {
-font-family: -apple-system, ‘Apple SD Gothic Neo’, sans-serif;
-font-size: 11px;
-color: rgba(61,90,71,0.4);
-margin-bottom: 0.3rem;
-}
-.tl-note {
-font-size: 12px;
-color: #7a8a80;
-font-weight: 300;
-line-height: 1.6;
-}
-.tl-note em {
-font-style: normal;
-color: #7a5e1a;
-}
-.tl-note em.brown { color: #6b4e3d; }
-.tl-tag {
-display: inline-block;
-font-size: 10px;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-padding: 2px 7px;
-border: 1px solid currentColor;
-border-radius: 2px;
-margin-left: 0.4rem;
-vertical-align: middle;
-font-weight: 400;
-}
-.tag-green { color: #7a5e1a; }
-.tag-brown { color: #6b4e3d; }
-.tag-warn { color: #b85a3a; }
+  /* ── TIMELINE ── */
+  .timeline { display: flex; flex-direction: column; }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(61,90,71,0.08);
+    transition: background 0.2s, padding 0.2s;
+  }
+  .timeline-item:hover {
+    background: rgba(61,90,71,0.04);
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .tl-time {
+    font-size: 12px;
+    color: #7a5e1a;
+    letter-spacing: 0.05em;
+    padding-top: 0.15rem;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .tl-time.brown { color: #6b4e3d; }
+  .tl-time.gray { color: rgba(61,90,71,0.3); }
+  .tl-place {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f1a14;
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+  }
+  .tl-kr {
+    font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif;
+    font-size: 11px;
+    color: rgba(61,90,71,0.4);
+    margin-bottom: 0.3rem;
+  }
+  .tl-note {
+    font-size: 12px;
+    color: #7a8a80;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .tl-note em {
+    font-style: normal;
+    color: #7a5e1a;
+  }
+  .tl-note em.brown { color: #6b4e3d; }
+  .tl-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    font-weight: 400;
+  }
+  .tag-green { color: #7a5e1a; }
+  .tag-brown { color: #6b4e3d; }
+  .tag-warn { color: #b85a3a; }
+  .tag-unesco { color: #9b7fc4; }
+  .tag-arch { color: #6e8aad; }
+  .tag-shop { color: #7a5e1a; }
+  .tag-hist { color: #a0522d; }
 
-/* ── TRANSPORT ── */
-.transport-item {
-display: grid;
-grid-template-columns: 70px 1fr;
-gap: 1rem;
-padding: 0.6rem 0;
-border-bottom: 1px solid rgba(61,90,71,0.08);
-}
-.transport-icon {
-font-size: 13px;
-padding-top: 0.15rem;
-text-align: center;
-}
-.transport-text {
-font-size: 12px;
-color: #7a8a80;
-line-height: 1.6;
-}
-.transport-text strong {
-color: #0f1a14;
-font-weight: 600;
-}
+  /* ── TRANSIT LINE ── */
+  .tl-transit {
+    font-size: 11px;
+    color: rgba(61,90,71,0.38);
+    padding: 0.25rem 0;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid rgba(61,90,71,0.06);
+    line-height: 1.5;
+    text-align: center;
+  }
 
-/* ── NOTES ── */
-.notes-section {
-background: #1a2a20;
-padding: 2rem 10vw;
-}
-.notes-title {
-font-size: 10px;
-letter-spacing: 0.35em;
-color: #9dbfa8;
-text-transform: uppercase;
-margin-bottom: 1rem;
-}
-.notes-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-gap: 0.8rem;
-}
-.note-item {
-display: flex;
-gap: 10px;
-align-items: start;
-font-size: 12px;
-color: rgba(255,255,255,0.4);
-line-height: 1.7;
-}
-.note-dot {
-width: 4px;
-height: 4px;
-border-radius: 50%;
-background: rgba(157,191,168,0.4);
-flex-shrink: 0;
-margin-top: 7px;
-}
+  /* ── TRANSPORT ── */
+  .transport-item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(61,90,71,0.08);
+  }
+  .transport-icon {
+    font-size: 13px;
+    padding-top: 0.15rem;
+    text-align: center;
+  }
+  .transport-text {
+    font-size: 12px;
+    color: #7a8a80;
+    line-height: 1.6;
+  }
+  .transport-text strong {
+    color: #0f1a14;
+    font-weight: 600;
+  }
 
-/* ── FOOTER ── */
-footer {
-background-color: #1a2a20;
-border-top: 1px solid rgba(255,255,255,0.04);
-padding: 2rem 10vw;
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-wrap: wrap;
-gap: 0.5rem;
-}
-.footer-text {
-font-size: 13px;
-color: rgba(255,255,255,0.25);
-letter-spacing: 0.1em;
-font-family: -apple-system, ‘Apple SD Gothic Neo’, sans-serif;
-}
-.footer-dates {
-font-size: 11px;
-color: rgba(255,255,255,0.15);
-letter-spacing: 0.2em;
-}
+  /* ── NOTES ── */
+  .notes-section {
+    background: #1a2a20;
+    padding: 2rem 10vw;
+  }
+  .notes-title {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    color: #9dbfa8;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.8rem;
+  }
+  .note-item {
+    display: flex;
+    gap: 10px;
+    align-items: start;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+  }
+  .note-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(157,191,168,0.4);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
 
-@keyframes fadeUp {
-from { opacity: 0; transform: translateY(20px); }
-to   { opacity: 1; transform: translateY(0); }
-}
-@media (max-width: 600px) {
-.hero { padding: 12vw 6vw; }
-.days-container { padding: 10vw 6vw; }
-.booking-section { padding: 2rem 6vw; }
-.theme-strip { padding: 2rem 6vw; }
-.notes-section { padding: 2rem 6vw; }
-footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
-.day-card { grid-template-columns: 50px 1fr; }
-.day-card:not(:last-child)::after { left: 24px; }
-.hero-flights { flex-direction: column; }
-}
+  /* ── FOOTER ── */
+  footer {
+    background-color: #1a2a20;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    padding: 2rem 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .footer-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+    font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  }
+  .footer-dates {
+    font-size: 11px;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: 0.2em;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 600px) {
+    .hero { padding: 12vw 6vw; }
+    .days-container { padding: 10vw 6vw; }
+    .booking-section { padding: 2rem 6vw; }
+    .theme-strip { padding: 2rem 6vw; }
+    .notes-section { padding: 2rem 6vw; }
+    footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
+    .day-card { grid-template-columns: 50px 1fr; }
+    .day-card:not(:last-child)::after { left: 24px; }
+    .hero-flights { flex-direction: column; }
+  }
 </style>
-
 </head>
 <body>
 
 <!-- HERO -->
-
 <section class="hero">
   <div class="hero-badge">Seoul 2026 · Field Notes</div>
-  <h1 class="hero-title">地景<br><span>讀民情</span></h1>
-  <p class="hero-sub">四天三夜，以鐘路為基地。威權現代主義 · 殖民地層 · 風土人格。</p>
+  <h1 class="hero-title">地景<br><span>即記憶</span></h1>
+  <p class="hero-sub">從朝鮮而起，走過帝國、戰火與威權的首爾，至今仍不斷地書寫著自己。</p>
   <div class="hero-flights">
     <div class="flight-card">
       <div class="flight-label">去程 Outbound</div>
@@ -514,36 +526,57 @@ footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
 </section>
 
 <!-- BOOKING -->
-
 <section class="booking-section">
   <div class="booking-title">已確認訂單 Confirmed Bookings</div>
   <div class="booking-grid">
     <div class="booking-item">
       <div class="booking-label">住宿</div>
-      <div class="booking-name">Hanok Hotel Daam</div>
+      <div class="booking-name"><a href="https://naver.me/x1uVBxEj" target="_blank" style="color:inherit;text-decoration:none;">Hanok Hotel Daam</a></div>
       <div class="booking-detail">7/10－7/13 · 3晚 · 男性共用床位房</div>
       <div class="booking-detail">19 Yulgok-ro 6-gil，鐘路區</div>
       <div class="booking-confirmed">✓ 含早餐 · 免費取消 · 延後付款</div>
     </div>
     <div class="booking-item">
       <div class="booking-label">機票</div>
-      <div class="booking-name">OZ714 韓亞航空　TPE T2 → ICN T2</div>
-      <div class="booking-detail">7/10（五）16:55 → 20:25 · 2h30m</div>
-      <div class="booking-name" style="margin-top:0.4rem">OZ713 韓亞航空　ICN T2 → TPE T2</div>
-      <div class="booking-detail">7/13（一）13:55 → 15:30 · 2h35m</div>
-      <div class="booking-confirmed">✓ 直飛 · 兩程已確認</div>
+      <div class="booking-name">韓亞航空 · 直飛兩程</div>
+      <div class="booking-detail">OZ714　7/10（五）TPE 16:55 → ICN 20:25</div>
+      <div class="booking-detail">OZ713　7/13（一）ICN 13:55 → TPE 15:30</div>
+      <div class="booking-confirmed">✓ 已確認</div>
     </div>
     <div class="booking-item">
-      <div class="booking-label">交通</div>
-      <div class="booking-name">機場巴士 6011</div>
-      <div class="booking-detail">仁川機場 → 安國站</div>
-      <div class="booking-confirmed">✓ 步行至飯店</div>
+      <div class="booking-label">景點預約</div>
+      <div class="booking-name">昌德宮後苑（祕苑）英語導覽</div>
+      <div class="booking-detail">7/11（六）10:30 英語場次</div>
+      <div class="booking-detail">後苑5,000韓元・線上預約付款</div>
+      <div class="booking-detail">預約網址：<a href="https://ticket.uforus.co.kr/web/main?shopEncode=&lang=en" style="color:#c8a84b;">ticket.uforus.co.kr</a></div>
+      <div class="booking-confirmed">⚠ 7/5（六）台灣時間09:00開搶 · 搶到後20分鐘內付款</div>
+    </div>
+    <div class="booking-item">
+      <div class="booking-label">景點預約</div>
+      <div class="booking-name">首爾樂天塔 Seoul Sky 觀景台</div>
+      <div class="booking-detail">7/12（日）· 1人 · ₩27,200</div>
+      <div class="booking-detail">取票：<a href="https://www.seoultravelpass.com/zh-TW/voucher/TV2641570146/a1cdfb47-511c-4c4b-86c1-05bcc7fcc67e" style="color:#c8a84b;">Seoul Pass 門票連結</a></div>
+      <div class="booking-confirmed">✓ 已確認</div>
+    </div>
+    <div class="booking-item">
+      <div class="booking-label">機場快線</div>
+      <div class="booking-name">AREX 直達列車 · 兩程</div>
+      <div class="booking-detail">去程：7/10（五）仁川T2 21:50 → 首爾站 · 01號車 5D</div>
+      <div class="booking-detail">返程：7/13（一）首爾站 10:56 → 仁川T2 · 02號車 9A</div>
+      <div class="booking-detail">取票：<a href="https://www.airportrailroad.com/ticket/info" style="color:#c8a84b;">AREX官網（會員登入）</a></div>
+      <div class="booking-confirmed">✓ 兩程已購票</div>
+    </div>
+    <div class="booking-item">
+      <div class="booking-label">觀光巴士</div>
+      <div class="booking-name">首爾市區觀光巴士</div>
+      <div class="booking-detail">7/11（六）19:30 · 太平路一街 62-9</div>
+      <div class="booking-detail">票券確認：<a href="https://zh.seoulcitybus.com/reservation/reservation_check_2.php" style="color:#c8a84b;">seoulcitybus.com</a></div>
+      <div class="booking-confirmed">✓ 已訂購</div>
     </div>
   </div>
 </section>
 
 <!-- THEME STRIP -->
-
 <div class="theme-strip">
   <div class="theme-item">
     <div class="theme-day">D2 · 7/11</div>
@@ -557,24 +590,22 @@ footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
   </div>
   <div class="theme-item">
     <div class="theme-day">D4 · 7/13</div>
-    <div class="theme-title">幽靜收尾</div>
-    <div class="theme-sub">昌德宮後苑<br>朝鮮王朝最後的靜謐</div>
+    <div class="theme-title">北村收尾</div>
+    <div class="theme-sub">韓屋巷弄最後散步<br>然後回家</div>
   </div>
 </div>
 
 <!-- DAYS -->
-
 <section class="days-container">
   <div class="section-label">行程總覽 Day by Day</div>
 
   <!-- D1 -->
-
   <div class="day-card">
     <div class="day-number"><div class="day-dot"></div><div class="day-num-text">DAY 1</div></div>
     <div class="day-content">
       <div class="day-header">
         <div class="day-date">7 / 10　Friday</div>
-        <div class="day-title">抵達・鐘路</div>
+        <div class="day-title">抵達日。首爾鐘路</div>
         <div class="day-subtitle">落地入夜，益善洞初探</div>
       </div>
       <div class="timeline">
@@ -603,20 +634,20 @@ footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
           <div class="tl-time">20:25</div>
           <div class="tl-body">
             <div class="tl-place">仁川國際機場 T2 抵達</div>
-            <div class="tl-note">入境 → 搭機場巴士 6011 → 安國站下車，步行至飯店</div>
+            <div class="tl-note">入境 → 海關區域內友利銀行換匯所領取WOWPass → AREX 21:50發車 → 首爾站 → 地鐵至安國站 → 步行至飯店</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time">約 22:00</div>
+          <div class="tl-time">約 23:30</div>
           <div class="tl-body">
-            <div class="tl-place">入住 Hanok Hotel Daam</div>
+            <div class="tl-place"><a href="https://naver.me/x1uVBxEj" target="_blank" style="color:inherit;text-decoration:none;">入住 Hanok Hotel Daam</a></div>
             <div class="tl-note">鐘路區，北村韓屋村旁。含早餐，3晚。</div>
           </div>
         </div>
         <div class="timeline-item">
           <div class="tl-time gray">入住後</div>
           <div class="tl-body">
-            <div class="tl-place">益善洞韓屋村夜間散步</div>
+            <div class="tl-place"><a href="https://naver.me/xIFe50wB" target="_blank" style="color:inherit;text-decoration:none;">益善洞韓屋村夜間散步</a></div>
             <div class="tl-kr">익선동 한옥마을</div>
             <div class="tl-note">步行3分鐘即達。<em>白天是觀光客的，夜晚氣場還給在地人。</em>感受第一層城市溫度。</div>
           </div>
@@ -626,14 +657,13 @@ footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
   </div>
 
   <!-- D2 -->
-
   <div class="day-card">
     <div class="day-number"><div class="day-dot"></div><div class="day-num-text">DAY 2</div></div>
     <div class="day-content">
       <div class="day-header">
         <div class="day-date">7 / 11　Saturday</div>
-        <div class="day-title">城西軸線日</div>
-        <div class="day-subtitle">景福宮 × 殖民遺址 × 威權美學 × 延南洞</div>
+        <div class="day-title">古宮殿・城西軸線</div>
+        <div class="day-subtitle">城門宮殿 × 密苑宗廟 × 平壤冷麵 × 夜遊江岸</div>
         <div class="day-theme-tag">列強 · 殖民 · 威權</div>
       </div>
       <div class="timeline">
@@ -644,220 +674,273 @@ footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time gray">—</div>
+          <div class="tl-time">08:00</div>
           <div class="tl-body">
-            <div class="tl-place">飯店 → 景福宮<span class="tl-tag tag-green">步行 15分</span></div>
-            <div class="tl-note">景福宮、光化門、貞洞街、德壽宮、世宗文化會館、舊市廳舍全程步行串連，無需地鐵</div>
+            <div class="tl-place"><a href="https://naver.me/FZo2Yn6K" target="_blank" style="color:inherit;text-decoration:none;">London Bagel Museum 外帶<span class="tl-tag tag-shop">購</span></a></div>
+            <div class="tl-kr">런던베이글뮤지엄 안국 · 桂洞 102-1</div>
+            <div class="tl-note">飯店步行即達。先買好外帶貝果，帶著走。留著19:30觀光巴士上享用。</div>
           </div>
         </div>
+        <div class="tl-transit">→ 安國 → 光化門廣場 → 景福宮<span class="tl-tag tag-green">步行 15分</span></div>
         <div class="timeline-item">
-          <div class="tl-time">09:00</div>
+          <div class="tl-time">08:15</div>
           <div class="tl-body">
-            <div class="tl-place">景福宮</div>
-            <div class="tl-kr">경복궁</div>
-            <div class="tl-note">朝鮮王朝權力核心。<em>日治時期被刻意拆除破壞，總督府蓋在正前方——殖民暴力的物理紀錄至今仍刻在地景裡。</em>停留約1小時。</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-time">10:00</div>
-          <div class="tl-body">
-            <div class="tl-place">光化門廣場</div>
+            <div class="tl-place"><a href="https://naver.me/xY4wza4L" target="_blank" style="color:inherit;text-decoration:none;">光化門廣場</a></div>
             <div class="tl-kr">광화문광장</div>
-            <div class="tl-note"><em>同一條軸線上，朝鮮王朝、日本殖民、威權現代化三個時代的話語權爭奪至今未停。</em>世宗大王與李舜臣銅像，朴正熙重建的國家敘事空間。</div>
+            <div class="tl-note"><em>同一條軸線上，朝鮮王朝、日本殖民、威權現代化三個時代的話語權爭奪至今未停。</em>世宗大王與李舜臣銅像，朴正熙重建的國家敘事空間。途經停留約15分鐘。</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">08:30</div>
+          <div class="tl-body">
+            <div class="tl-place"><a href="https://naver.me/GgUWK5I9" target="_blank" style="color:inherit;text-decoration:none;">景福宮<span class="tl-tag tag-hist">史</span></a></div>
+            <div class="tl-kr">경복궁</div>
+            <div class="tl-note">朝鮮王朝權力核心。<em>日治時期被刻意拆除破壞，總督府蓋在正前方——殖民暴力的物理紀錄至今仍刻在地景裡。</em>停留約1小時15分。<br><br><em>⚠ 購票須知</em>：興禮門前售票處現場購綜合宮殿門票6,000～10,000 KRW（含景福宮、昌德宮、德壽宮、昌慶宮、宗廟），僅適用日間一般入場。</div>
+          </div>
+        </div>
+        <div class="tl-transit">→ 景福宮 → 昌德宮<span class="tl-tag tag-green">步行 10分</span></div>
+        <div class="timeline-item">
+          <div class="tl-time">09:45</div>
+          <div class="tl-body">
+            <div class="tl-place"><a href="https://naver.me/xVRB20Sq" target="_blank" style="color:inherit;text-decoration:none;">昌德宮本館<span class="tl-tag tag-hist">史</span><span class="tl-tag tag-unesco">世遺</span></a></div>
+            <div class="tl-kr">창덕궁</div>
+            <div class="tl-note">景福宮大部分為後來重建，昌德宮保存更完整。仁政殿、宣政殿、熙政堂核心殿閣，朝鮮王朝日常空間的真實紋理。停留約45分鐘。</div>
           </div>
         </div>
         <div class="timeline-item">
           <div class="tl-time">10:30</div>
           <div class="tl-body">
-            <div class="tl-place">貞洞街</div>
-            <div class="tl-kr">정동길</div>
-            <div class="tl-note">朝鮮末期列強使館聚集地——俄、美、英使館舊址沿街並列。<em>主權被瓜分的物理現場，每棟建築背後都是一次外交讓步。</em>步行30-40分。</div>
+            <div class="tl-place"><a href="https://naver.me/xVRB20Sq" target="_blank" style="color:inherit;text-decoration:none;">昌德宮後苑（祕苑）英語導覽<span class="tl-tag tag-unesco">世遺</span></a></div>
+            <div class="tl-kr">창덕궁 비원 · English Tour</div>
+            <div class="tl-note">朝鮮王朝地景保存最完整之處——不壯觀，但幽靜。78英畝林苑與池塘。導覽約70-90分鐘。憑預約QR Code現場取票入場。</div>
           </div>
         </div>
+        <div class="tl-transit">→ 昌德宮 → 昌慶宮<span class="tl-tag tag-green">步行 5分</span></div>
         <div class="timeline-item">
-          <div class="tl-time">11:30</div>
+          <div class="tl-time">12:15</div>
           <div class="tl-body">
-            <div class="tl-place">德壽宮石牆路</div>
-            <div class="tl-kr">덕수궁 돌담길</div>
-            <div class="tl-note">石牆一側朝鮮王朝，另一側日治西洋建築。<em>首爾最清晰感受時代壓迫感的一條路。</em>步行20分。</div>
+            <div class="tl-place"><a href="https://naver.me/GvWcPVvt" target="_blank" style="color:inherit;text-decoration:none;">昌慶宮<span class="tl-tag tag-hist">史</span></a></div>
+            <div class="tl-kr">창경궁</div>
+            <div class="tl-note">昌德宮相鄰，通票含蓋。日治時期曾被改建為動物園，是宮殿遭殖民破壞最具體的案例之一。停留約45分鐘。</div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="tl-time">12:00</div>
-          <div class="tl-body">
-            <div class="tl-place">國立現代美術館德壽宮館</div>
-            <div class="tl-kr">국립현대미술관 덕수궁관</div>
-            <div class="tl-note">日治建築外殼內展示韓國近現代美術。<em>空間本身就是文本。</em>週六開放至21:00。停留1-1.5小時。</div>
-          </div>
-        </div>
+        <div class="tl-transit">→ 昌慶宮 → 砂鍋家<span class="tl-tag tag-green">步行 約15分</span></div>
         <div class="timeline-item">
           <div class="tl-time brown">13:30</div>
           <div class="tl-body">
-            <div class="tl-place">午餐</div>
-            <div class="tl-note">德壽宮館附近隨機選韓式定食或湯飯。<em class="brown">告知不要內臟部位。</em></div>
+            <div class="tl-place"><a href="https://naver.me/5p0wd2ST" target="_blank" style="color:inherit;text-decoration:none;">午餐 · 砂鍋家</a></div>
+            <div class="tl-kr">뚝배기집 · 貫鐵洞 5-1</div>
+            <div class="tl-note">鍾路3街附近。韓式砂鍋定食，告知不要內臟部位。</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time">14:30</div>
+          <div class="tl-time">14:00</div>
           <div class="tl-body">
-            <div class="tl-place">世宗文化會館</div>
-            <div class="tl-kr">세종문화회관</div>
-            <div class="tl-note">1978年朴正熙時期建成。<em>威權現代主義的典型語法——柱列尺度製造壓迫性國家感。</em>不需入內，站廣場看立面即可。約10分鐘。</div>
+            <div class="tl-place"><a href="https://naver.me/FKG5yf3J" target="_blank" style="color:inherit;text-decoration:none;">鍾路3街 Olive Young<span class="tl-tag tag-shop">購</span></a></div>
+            <div class="tl-kr">올리브영 종로3가</div>
+            <div class="tl-note">開至22:00。美妝、保養、藥妝一次搞定。</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time">15:00</div>
+          <div class="tl-time gray">15:00</div>
           <div class="tl-body">
-            <div class="tl-place">舊首爾市廳舍（首爾市立圖書館）</div>
-            <div class="tl-kr">서울도서관</div>
-            <div class="tl-note">1926年日治建造，後成威權時代權力中心。<em>殖民、威權、財閥現代性三層同時在場，首爾地景最濃縮的一個鏡頭。</em>可入內參觀。停留30分。</div>
+            <div class="tl-place">回飯店休息・放東西</div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="tl-time gray">—</div>
-          <div class="tl-body">
-            <div class="tl-place">市廳站 → 弘大入口站<span class="tl-tag tag-green">2號線</span></div>
-            <div class="tl-note">步行10分鐘至延南洞，約30分鐘</div>
-          </div>
-        </div>
+        <div class="tl-transit">→ 飯店 → 宗廟<span class="tl-tag tag-green">步行 約15分</span></div>
         <div class="timeline-item">
           <div class="tl-time">16:30</div>
           <div class="tl-body">
-            <div class="tl-place">延南洞</div>
-            <div class="tl-kr">연남동</div>
-            <div class="tl-note">首爾文青濃度最高的街區。獨立書店、設計選物、咖啡廳密集。不用地圖，隨意走進感興趣的店。停留1.5-2小時。</div>
+            <div class="tl-place"><a href="https://naver.me/xNpLKuVT" target="_blank" style="color:inherit;text-decoration:none;">宗廟<span class="tl-tag tag-hist">史</span><span class="tl-tag tag-unesco">世遺</span></a></div>
+            <div class="tl-kr">종묘</div>
+            <div class="tl-note">朝鮮王朝歷代國王與王妃牌位祠堂。世界現存最長木造建築之一。週六自由入場，通票含蓋。停留約30分鐘。</div>
+          </div>
+        </div>
+        <div class="tl-transit">→ 宗廟 → 又來屋<span class="tl-tag tag-green">步行 約15分</span></div>
+        <div class="timeline-item">
+          <div class="tl-time brown">17:30</div>
+          <div class="tl-body">
+            <div class="tl-place">晚餐 · 又來屋</div>
+            <div class="tl-kr">우래옥 · 창경궁로 62-29</div>
+            <div class="tl-note">1946年開業，米其林平壤冷麵名店。人氣極高，建議使用테이블링APP提前排隊。告知不要牛雜。</div>
+          </div>
+        </div>
+        <div class="tl-transit">→ 又來屋 → 首爾圖書館<span class="tl-tag tag-green">步行 約5分</span></div>
+        <div class="timeline-item">
+          <div class="tl-time">18:00</div>
+          <div class="tl-body">
+            <div class="tl-place"><a href="https://naver.me/GP2duIEa" target="_blank" style="color:inherit;text-decoration:none;">舊首爾市廳舍（首爾圖書館）<span class="tl-tag tag-arch">建</span></a></div>
+            <div class="tl-kr">서울도서관</div>
+            <div class="tl-note">1926年日治建造，後成威權時代權力中心。<em>殖民、威權、財閥現代性三層同時在場，首爾地景最濃縮的一個鏡頭。</em>外觀停留約10分鐘。順走德壽宮石牆路至德壽宮。</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time brown">18:30</div>
+          <div class="tl-time">18:20</div>
           <div class="tl-body">
-            <div class="tl-place">晚餐 · 乙密台平壤冷麵</div>
-            <div class="tl-kr">을밀대 · 평양냉면</div>
-            <div class="tl-note">延南洞步行可達。蕎麥麵體有嚼勁、湯底清冽。<em>在首爾吃平壤的食物，分裂的地緣感會很具體。</em>單點冷麵，告知不要牛雜。</div>
+            <div class="tl-place"><a href="https://naver.me/FHOlPvQ3" target="_blank" style="color:inherit;text-decoration:none;">德壽宮<span class="tl-tag tag-hist">史</span></a></div>
+            <div class="tl-kr">덕수궁</div>
+            <div class="tl-note">中西建築合併的宮殿，石造殿為代表。通票含蓋入場。停留約30分鐘。</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time gray">—</div>
+          <div class="tl-time">18:50</div>
           <div class="tl-body">
-            <div class="tl-place">弘大入口站 → 鐘閣站<span class="tl-tag tag-green">2號線→市廳轉1號線</span></div>
-            <div class="tl-note">步行10分鐘回飯店，約30分鐘</div>
+            <div class="tl-place"><a href="https://naver.me/5DZ8G4cT" target="_blank" style="color:inherit;text-decoration:none;">梨花學堂（梨花女子高中）<span class="tl-tag tag-hist">史</span></a></div>
+            <div class="tl-kr">이화여자고등학교</div>
+            <div class="tl-note">1886年韓國第一所女子學校，殖民時期紅磚建築保存完整。步行入校園外觀參觀，停留約10分鐘。</div>
           </div>
         </div>
+        <div class="timeline-item">
+          <div class="tl-time">19:05</div>
+          <div class="tl-body">
+            <div class="tl-place"><a href="https://naver.me/I5w5WTVi" target="_blank" style="color:inherit;text-decoration:none;">貞洞第一教會<span class="tl-tag tag-hist">史</span></a></div>
+            <div class="tl-kr">정동제일교회</div>
+            <div class="tl-note">1897年韓國最早新教建築，紅磚哥德式。殖民地景裡的西洋宗教滲透痕跡。停留約10分鐘。</div>
+          </div>
+        </div>
+        <div class="tl-transit">→ 步行至觀光巴士乘車處<span class="tl-tag tag-green">約10分</span></div>
+        <div class="timeline-item">
+          <div class="tl-time">19:30</div>
+          <div class="tl-body">
+            <div class="tl-place"><a href="https://naver.me/GRDosPCN" target="_blank" style="color:inherit;text-decoration:none;">首爾市區觀光巴士</a></div>
+            <div class="tl-kr">서울시티투어버스 · 太平路一街 62-9</div>
+            <div class="tl-note">已訂購7/11場次。London Bagel Museum貝果在此享用。</div>
+          </div>
+        </div>
+        <div class="tl-transit">→ 光化門站 → 安國站 → 步行回飯店<span class="tl-tag tag-green">3號線 約2站</span></div>
       </div>
     </div>
   </div>
 
   <!-- D3 -->
-
   <div class="day-card">
     <div class="day-number"><div class="day-dot brown"></div><div class="day-num-text">DAY 3</div></div>
     <div class="day-content">
       <div class="day-header">
         <div class="day-date brown">7 / 12　Sunday</div>
-        <div class="day-title">跨江・南山・購物</div>
-        <div class="day-subtitle">聖水洞 × N首爾塔黃昏 × 仁寺洞 × 益善洞</div>
-        <div class="day-theme-tag brown">工業 · 地景 · 文青</div>
+        <div class="day-title">新首爾・漢江之南</div>
+        <div class="day-subtitle">京城帝大 × 聖水人文 × 復興再生 × 世界建築</div>
+        <div class="day-theme-tag brown">工業改造 · 殖民建築 · 深厚人文</div>
       </div>
       <div class="timeline">
         <div class="timeline-item">
           <div class="tl-time gray">早餐</div>
           <div class="tl-body"><div class="tl-place">飯店早餐</div></div>
         </div>
+        <div class="tl-transit">→ 飯店 → 혜화동<span class="tl-tag tag-green">步行 約15分</span></div>
         <div class="timeline-item">
-          <div class="tl-time gray">—</div>
+          <div class="tl-time">08:30</div>
           <div class="tl-body">
-            <div class="tl-place">安國站 → 聖水站<span class="tl-tag tag-brown">2號線 · 約40分</span></div>
-            <div class="tl-note">跨越漢江</div>
+            <div class="tl-place"><a href="https://naver.me/F7F4lAK5" target="_blank" style="color:inherit;text-decoration:none;">京城帝國大學舊址<span class="tl-tag tag-hist">史</span></a></div>
+            <div class="tl-kr">연건동 · 서울대학교병원 연건캠퍼스</div>
+            <div class="tl-note">京城帝大本部舊址，現為서울대학교병원연건캠퍼스。部分日治時期磚造建築仍在使用中。<em>帝國主義的空間遺留——殖民建築與現代醫療機構並存的地景張力。</em>停留約45分鐘。</div>
+          </div>
+        </div>
+        <div class="tl-transit">→ 혜화站 → 聖水站<span class="tl-tag tag-brown">4號線→東大門換2號線 · 約35分</span></div>
+        <div class="timeline-item">
+          <div class="tl-time">10:15</div>
+          <div class="tl-body">
+            <div class="tl-place"><a href="https://naver.me/FKG5yTpZ" target="_blank" style="color:inherit;text-decoration:none;">空氣Deurap咖啡<span class="tl-tag tag-shop">購</span></a></div>
+            <div class="tl-kr">공기드립 성수 · 聖水洞二街 314-11</div>
+            <div class="tl-note">聖水洞早晨咖啡開場。</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time">10:00</div>
+          <div class="tl-time">10:45</div>
           <div class="tl-body">
-            <div class="tl-place">聖水洞</div>
+            <div class="tl-place">聖水洞<span class="tl-tag tag-arch">建</span><span class="tl-tag tag-shop">購</span></div>
             <div class="tl-kr">성수동</div>
-            <div class="tl-note">前工業廠房改造的設計街區。品牌快閃店、設計選物、獨立咖啡廳密集。<em>工業感與精品感並置，空間感比延南洞更開闊。</em>停留約3小時。</div>
+            <div class="tl-note">前工業廠房改造的設計街區。品牌快閃店、設計選物密集。隨意晃。</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time brown">12:30</div>
+          <div class="tl-time">11:15</div>
           <div class="tl-body">
-            <div class="tl-place">午餐 · 聖水洞內</div>
-            <div class="tl-note">選一間舒服的餐廳，韓式定食或燉肉均可。<em class="brown">告知不要內臟部位。</em></div>
+            <div class="tl-place"><a href="https://naver.me/GuCbsR6S" target="_blank" style="color:inherit;text-decoration:none;">Miffy Store Seoul<span class="tl-tag tag-shop">購</span></a></div>
+            <div class="tl-kr">5 Yeonmujang 13-gil, Seongdong-gu</div>
+            <div class="tl-note">2026年新開幕，聖水洞話題店。丹寧牛仔風系列最熱門，娃娃鑰匙圈18,000韓元。營業時間10:30-19:30。</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time gray">—</div>
+          <div class="tl-time brown">12:15</div>
           <div class="tl-body">
-            <div class="tl-place">聖水站 → 明洞站<span class="tl-tag tag-brown">2號線轉4號線 · 約30分</span></div>
+            <div class="tl-place">午餐 · 奶奶菜譜</div>
+            <div class="tl-kr">할머니레시피 · 聖水洞一街 668-108</div>
+            <div class="tl-note">告知不要內臟部位。</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time">14:30</div>
+          <div class="tl-time">13:15</div>
           <div class="tl-body">
-            <div class="tl-place">南山纜車 → N首爾塔</div>
-            <div class="tl-kr">남산케이블카 · N서울타워</div>
-            <div class="tl-note">明洞站步行約10分鐘至纜車乘搭處，單程約3分鐘。<em>黃昏前地景閱讀——城市紋理、山脈層次、漢江在光線低斜時最清晰。</em>7月日落約19:50，14:30-17:00是有效的地景閱讀時段。停留約2.5小時。</div>
+            <div class="tl-place"><a href="https://naver.me/GZDZSlqM" target="_blank" style="color:inherit;text-decoration:none;">Milestone咖啡 Seongsu店<span class="tl-tag tag-shop">購</span></a></div>
+            <div class="tl-kr">마일스톤커피 성수 · 聖水洞一街 668-101</div>
+            <div class="tl-note">午餐後點心。</div>
+          </div>
+        </div>
+        <div class="tl-transit">→ 聖水站 → 이촌站<span class="tl-tag tag-brown">2號線→동작換4號線 · 約25分</span></div>
+        <div class="timeline-item">
+          <div class="tl-time">14:00</div>
+          <div class="tl-body">
+            <div class="tl-place"><a href="https://naver.me/F6QlGpGg" target="_blank" style="color:inherit;text-decoration:none;">國立中央博物館<span class="tl-tag tag-hist">史</span></a></div>
+            <div class="tl-kr">국립중앙박물관 · 이촌站步行3分</span></div>
+            <div class="tl-note">韓國最大規模博物館，常設展免費。停留約2小時。</div>
+          </div>
+        </div>
+        <div class="tl-transit">→ 이촌站 → 잠실站<span class="tl-tag tag-brown">4號線→동작換2號線 · 約30分</span></div>
+        <div class="timeline-item">
+          <div class="tl-time">16:00</div>
+          <div class="tl-body">
+            <div class="tl-place"><a href="https://naver.me/FNt78Dy9" target="_blank" style="color:inherit;text-decoration:none;">롯데월드몰<span class="tl-tag tag-shop">購</span></a></div>
+            <div class="tl-kr">롯데월드몰 · 잠실站直達</div>
+            <div class="tl-note">室內購物中心，冷氣充足。韓國本土品牌與國際品牌齊全，隨意逛到晚餐時間。</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time brown">17:00</div>
+          <div class="tl-time brown">17:30</div>
           <div class="tl-body">
-            <div class="tl-place">下山 → 返回鐘路區</div>
-            <div class="tl-kr">명동</div>
-            <div class="tl-note">纜車下山後步行至明洞站，搭地鐵返回。</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-time gray">—</div>
-          <div class="tl-body">
-            <div class="tl-place">明洞站 → 安國站<span class="tl-tag tag-brown">4號線轉3號線 · 約15-20分</span></div>
+            <div class="tl-place"><a href="https://naver.me/xy7T3qTf" target="_blank" style="color:inherit;text-decoration:none;">晚餐 · 원할머니국수보쌈</a></div>
+            <div class="tl-kr">원할머니국수보쌈 제2롯데월드몰점 · 6樓</div>
+            <div class="tl-note">보쌈반상16,000韓元，特보쌈반상18,000韓元。一人份可點，週末有等候約30分鐘。營業至22:00，最後點餐21:00。</div>
           </div>
         </div>
         <div class="timeline-item">
           <div class="tl-time">19:00</div>
           <div class="tl-body">
-            <div class="tl-place">仁寺洞</div>
+            <div class="tl-place">Seoul Sky 觀景台</div>
+            <div class="tl-kr">서울스카이 · 123層 555m</div>
+            <div class="tl-note">7月日落約19:50，日落到夜景轉換的黃金時段。停留至20:00。</div>
+          </div>
+        </div>
+        <div class="tl-transit">→ 잠실站 → 종로3가站<span class="tl-tag tag-brown">2號線→忠武路換4號線 · 約40分</span></div>
+        <div class="timeline-item">
+          <div class="tl-time">20:40</div>
+          <div class="tl-body">
+            <div class="tl-place"><a href="https://naver.me/GCJvxTYg" target="_blank" style="color:inherit;text-decoration:none;">仁寺洞<span class="tl-tag tag-shop">購</span></a></div>
             <div class="tl-kr">인사동</div>
-            <div class="tl-note">飯店步行約10分鐘。Ssamziegil商場中庭式設計，獨立品牌與手工藝品為主。停留約1小時。</div>
+            <div class="tl-note">飯店步行約10分鐘。Ssamziegil商場，獨立品牌與手工藝品為主。</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time brown">20:00</div>
+          <div class="tl-time">21:30</div>
           <div class="tl-body">
-            <div class="tl-place">晚餐 · 益善洞</div>
+            <div class="tl-place"><a href="https://naver.me/xIFe50wB" target="_blank" style="color:inherit;text-decoration:none;">益善洞</a></div>
             <div class="tl-kr">익선동</div>
-            <div class="tl-note">仁寺洞步行5分鐘。益善洞韓屋改造餐廳密集，隨機選一間。<em class="brown">告知不要內臟部位。</em></div>
+            <div class="tl-note">仁寺洞步行5分鐘。韓屋改造街區，夜間氛圍好。</div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="tl-time">21:00</div>
-          <div class="tl-body">
-            <div class="tl-place">鐘路三街 Olive Young</div>
-            <div class="tl-kr">종로3가</div>
-            <div class="tl-note">益善洞步行5分鐘。<em>Olive Young</em>通常開至22:00，藥妝、保養品、零食按需採購。</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-time gray">21:00</div>
-          <div class="tl-body">
-            <div class="tl-place">北村韓屋村夜間散步 → 返回飯店</div>
-            <div class="tl-kr">북촌한옥마을</div>
-            <div class="tl-note">步行回飯店，順路穿越北村。<em>與D1益善洞夜間散步形成首尾呼應。</em></div>
-          </div>
-        </div>
+        <div class="tl-transit">→ 步行回飯店</div>
       </div>
     </div>
   </div>
 
   <!-- D4 -->
-
   <div class="day-card">
     <div class="day-number"><div class="day-dot"></div><div class="day-num-text">DAY 4</div></div>
     <div class="day-content">
       <div class="day-header">
         <div class="day-date">7 / 13　Monday</div>
-        <div class="day-title">幽靜・返台</div>
-        <div class="day-subtitle">昌德宮後苑 × 然後回家</div>
+        <div class="day-title">返回日。北村漫步</div>
+        <div class="day-subtitle">清晨走訪，韓屋村裡的往日時光</div>
       </div>
       <div class="timeline">
         <div class="timeline-item">
@@ -867,24 +950,19 @@ footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
         <div class="timeline-item">
           <div class="tl-time">09:00</div>
           <div class="tl-body">
-            <div class="tl-place">昌德宮後苑（祕苑）</div>
-            <div class="tl-kr">창덕궁 비원</div>
-            <div class="tl-note">飯店步行5分鐘即達。後苑有<em>定時導覽制，現場排早場。</em>朝鮮王朝地景保存最完整之處——不壯觀，但幽靜。78英畝林苑與池塘，<em>與整趟行程的高密度形成對比。</em>停留約1.5小時。需另購後苑票。</div>
+            <div class="tl-place"><a href="https://naver.me/I5w5W0d9" target="_blank" style="color:inherit;text-decoration:none;">北村韓屋村散步<span class="tl-tag tag-hist">史</span></a></div>
+            <div class="tl-kr">북촌한옥마을</div>
+            <div class="tl-note">飯店步行即達。週一開放，免費。早晨觀光客少，韓屋巷弄最安靜的時段。<em>整趟行程的最後一個現場，讓節奏緩下來。</em>停留約1小時，可順道買小商品。</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time gray">10:30</div>
+          <div class="tl-time">10:30</div>
           <div class="tl-body">
             <div class="tl-place">退房</div>
-            <div class="tl-note">行李寄存或直接帶走</div>
+            <div class="tl-note">行李整理完畢，直接帶走</div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="tl-time gray">—</div>
-          <div class="tl-body">
-            <div class="tl-place">地鐵 → 首爾站 → AREX直達列車 → 仁川機場 T2<span class="tl-tag tag-green">約43分</span></div>
-          </div>
-        </div>
+        <div class="tl-transit">→ 北村 → 鍾路3街站 → 首爾站 → AREX直達列車 → 仁川機場 T2<span class="tl-tag tag-green">步行＋1號線＋AREX</span></div>
         <div class="timeline-item">
           <div class="tl-time">約 12:00</div>
           <div class="tl-body">
@@ -911,6 +989,7 @@ footer { padding: 2rem 6vw; flex-direction: column; text-align: center; }
   </div>
 
 </section>
+
 
 <script>
   const observer = new IntersectionObserver((entries) => {
